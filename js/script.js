@@ -1,3 +1,5 @@
+var currentYear = new Date().getFullYear();
+
 // Show and hide off-canvas navigation
 (function($) {
     var element = $('[gg-slide-nav]'),
@@ -59,11 +61,14 @@
     });
 }(jQuery));
 
-// Avatar menu
 (function($) {
+    // Avatar menu
     $('body').on('click', '[gg-avatar]', function() {
         $(this).toggleClass('gds-avatar--menu-open');
     });
+
+    // Copyright
+    $('#copyright--year').text(currentYear);
 }(jQuery));
 
 // Minimize header on scroll
